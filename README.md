@@ -16,7 +16,7 @@ The program is structured to be adaptable for future changes in flow log format,
 ## How It Works
 1. **Protocol Mapping**: Reads a CSV file (`protocol_number_mapping.csv`) containing mappings of protocol numbers to protocol names.
 2. **Lookup Table**: Reads a CSV file (`lookup_table_refer.csv`) with mappings of `dstport` and `protocol` to tags.
-3. **Flow Logs Parsing**: Reads and parses a flow log file (`flow_log_data.txt`) in version 2 format.
+3. **Flow Logs Parsing**: Reads and parses a flow log file (`flow_log_data.txt`).
 4. **Output**: Writes the counts of tags and port/protocol combinations to `output_counts.txt`.
 
 ---
@@ -30,7 +30,7 @@ The program is structured to be adaptable for future changes in flow log format,
 ---
 
 ## Assumptions
-- **Log Format**: Only the default flow log format (version 2) is supported. Each line must have exactly 14 columns, as defined in the `LOG_COLUMN_MAP` dictionary.
+- **Log Format**: Each line must have exactly 14 columns, as defined in the `LOG_COLUMN_MAP` dictionary.
 - **Protocol Mappings**: The protocol number mapping is provided in a CSV file (`protocol_number_mapping.csv`) with columns `Decimal` (for protocol number) and `Keyword` (for protocol name).
 - **Case Sensitivity**: Protocols in the lookup table are case-insensitive. They are converted to lowercase to match protocol names consistently.
 - **Malformed Lines**: If a line in the flow log file does not have exactly 14 fields, it is skipped.
